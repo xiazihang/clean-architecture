@@ -1,0 +1,41 @@
+plugins {
+    id 'java'
+    id "dev.iurysouza.modulegraph" version "0.6.0"
+}
+
+java {
+    sourceCompatibility = '17'
+}
+
+group = 'com.food.ordering'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+moduleGraphConfig {
+    readmePath = "./README.md"
+    heading = "### Module Graph"
+    // Or you can fully customize it by using the BASE theme:
+    // theme = new Theme.BASE(
+    //     [
+    //         "primaryTextColor": "#F6F8FAff", // All text colors
+    //         "primaryColor": "#5a4f7c", // Node color
+    //         "primaryBorderColor": "#5a4f7c", // Node border color
+    //         "tertiaryColor": "#40375c", // Container box background
+    //         "lineColor": "#f5a623",
+    //         "fontSize": "12px"
+    //     ],
+    //     focusColor = "#F5A622" // Color of the focused nodes if any
+    // )
+}
